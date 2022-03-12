@@ -4,15 +4,15 @@
  */
 package dataaccess;
 
-/**
- *
- * @author Cecilia Wang
- */
-
 import javax.sql.DataSource;
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
 import java.sql.*;
+
+/**
+ *
+ * @author Cecilia Wang
+ */
 
 public class ConnectionPool {
     private static ConnectionPool pool = null;
@@ -21,7 +21,7 @@ public class ConnectionPool {
     private ConnectionPool() {
         try {
             InitialContext ic = new InitialContext();
-            dataSource = (DataSource) ic.lookup("java:/comp/env/jdbc/usersdb");
+            dataSource = (DataSource) ic.lookup("java:/comp/env/jdbc/userDB");
         } catch (NamingException e) {
             System.out.println(e);
         }
